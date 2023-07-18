@@ -1,0 +1,32 @@
+{
+  "馒头": {
+    "changeHp": 5,
+    "changePower": 20,
+    "changeLevel": 0,
+    "changeExp": 0,
+    "changeAttack": 0,
+    "changeDefence": 0,
+    "changeSpeed": 0,
+    "changeCoin": 0,
+    "changeUpperHp": 0,
+    "changeUpperPower": 0,
+    "changeUpperAttack": 0,
+    "changeUpperDefence": 0,
+    "changeUpperSpeed": 0
+  },
+  "活力苹果": {
+    "changeHp": 10,
+    "changePower": 10,
+    "changeLevel": 0,
+    "changeExp": 0,
+    "changeAttack": 2,
+    "changeDefence": 0,
+    "changeSpeed": 0,
+    "changeCoin": 0,
+    "changeUpperHp": 0,
+    "changeUpperPower": 0,
+    "changeUpperAttack": 0,
+    "changeUpperDefence": 0,
+    "changeUpperSpeed": 0
+  }
+}

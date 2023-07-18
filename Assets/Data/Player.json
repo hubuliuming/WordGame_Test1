@@ -1,0 +1,22 @@
+{
+  "property": {
+    "Name": "小明",
+    "Hp": 0,
+    "Power": 0,
+    "Level": 2,
+    "Exp": 472,
+    "Attack": 24,
+    "Defence": 8,
+    "Speed": 10,
+    "UpperHp": 200,
+    "UpperPower": 100,
+    "UpperAttack": 24,
+    "UpperDefence": 0,
+    "UpperSpeed": 10
+  },
+  "goodsDict": {
+    "Coin": 480,
+    "馒头": 5,
+    "小块肉": 27
+  }
+}
