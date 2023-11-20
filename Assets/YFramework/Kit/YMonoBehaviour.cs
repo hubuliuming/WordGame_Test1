@@ -10,10 +10,11 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace YFramework.Kit
+namespace YFramework
 {
     public abstract class YMonoBehaviour : MonoBehaviour
     {
+
         #region TimeDelay
         //利用协程实现定时
         public void Delay(float delay, Action onFinished)
@@ -41,7 +42,31 @@ namespace YFramework.Kit
 
         protected virtual void OnDestroy()
         {
-            MsgDispatcher.UnRegisterAll();
+            Kit.MsgDispatcher.UnRegisterAll();
         }
+    }
+
+    public class MonoManager : YMonoBehaviour
+    {
+        private static MonoManager _instance;
+        public static MonoManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    var go = new GameObject(nameof(MonoManager));
+                    var t = go.AddComponent<MonoManager>();
+                    _instance = t;
+                }
+                return _instance;
+            }
+        }
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        
     }
 }

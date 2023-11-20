@@ -8,7 +8,7 @@
 
 using System;
 using UnityEngine.UI;
-using YFramework.Kit;
+using YFramework;
 
 public class ShowTime : YMonoBehaviour
 {
