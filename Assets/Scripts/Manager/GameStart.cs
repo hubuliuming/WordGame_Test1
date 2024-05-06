@@ -6,11 +6,10 @@
     功能：Nothing
 *****************************************************/
 
-using System.Collections.Generic;
-using Code_01.Enemy;
+
+using QFramework;
 using UnityEngine;
-using YFramework;
-using YFramework.Kit.Utility;
+
 
 namespace Code_01.Controller
 {

@@ -7,9 +7,10 @@
 *****************************************************/
 
 using Code_01.Mode;
+using QFramework;
 using UnityEngine.UI;
-using YFramework;
-using YFramework.Kit.UI;
+
+using YFramework.UI;
 
 namespace Code_01.Controller
 {
@@ -20,7 +21,7 @@ namespace Code_01.Controller
     
         public void Init()
         {
-            _showText = UiUtility.Get("Text").Text;
+            _showText = transform.Find("Text").GetComponent<Text>();
             _playerModel = this.GetModel<PlayerModel>();
             this.RegisterEvent<Msg.Register.UpdateShowData>(o => UpdateShow());
             UpdateShow();

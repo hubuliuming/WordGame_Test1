@@ -10,6 +10,7 @@
 using System.Collections.Generic;
 using Code_01.Enemy;
 using Code_01.Mode;
+using UnityEngine;
 using YFramework.Kit.Utility;
 
 namespace Code_01.Editor
@@ -41,7 +42,8 @@ namespace Code_01.Editor
                     changeSpeed = 0
                 }}
             };
-            YJsonUtility.WriteToJson(datas,Msg.Paths.Config.RecoverItem);
+            
+            JsonUti.WriteToJson(datas,MsgPaths.Config.RecoverItem);
         }
         
         [UnityEditor.MenuItem("Tools/重写写入EnemyJson")]
@@ -66,7 +68,7 @@ namespace Code_01.Editor
                     }
                 }
             };
-            YJsonUtility.WriteToJson(datas,Msg.Paths.Config.Enemy);
+            JsonUti.WriteToJson(datas,MsgPaths.Config.Enemy);
         }
         
         [UnityEditor.MenuItem("Tools/重写写入PlayerDataJson")]
@@ -95,7 +97,7 @@ namespace Code_01.Editor
                     {"馒头",5},
                 }
             };
-            YJsonUtility.WriteToJson<PlayerData>(playerData,Msg.Paths.Config.PlayerData);
+            JsonUti.WriteToJson<PlayerData>(playerData,MsgPaths.Config.PlayerData);
         }
 
         [UnityEditor.MenuItem("Tools/打开EnemyEditorWindow %e")]

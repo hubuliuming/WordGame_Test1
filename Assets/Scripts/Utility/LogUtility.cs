@@ -7,7 +7,7 @@
 *****************************************************/
 
 using UnityEngine;
-using YFramework;
+using QFramework;
 
 public class LogUtility : IUtility
 {

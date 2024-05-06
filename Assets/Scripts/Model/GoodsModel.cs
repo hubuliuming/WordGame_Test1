@@ -7,6 +7,7 @@
 *****************************************************/
 
 using System.Collections.Generic;
+using QFramework;
 using YFramework;
 
 public class GoodsModel : AbstractModel

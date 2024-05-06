@@ -7,6 +7,7 @@
 *****************************************************/
 
 using System.Collections.Generic;
+using QFramework;
 using YFramework;
 using YFramework.Kit.Utility;
 
@@ -18,7 +19,7 @@ namespace Code_01.Mode
 
         protected override void OnInit()
         {
-            _playerData = YJsonUtility.ReadFromJson<PlayerData>(Msg.Paths.Config.PlayerData);
+            _playerData = JsonUti.ReadFromJson<PlayerData>(MsgPaths.Config.PlayerData);
         }
         public bool IsDied { get; private set; }
         public bool IsEmptyPower { get; private set; }
@@ -29,7 +30,7 @@ namespace Code_01.Mode
             {
                 _playerData.property.Name = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData,Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData,MsgPaths.Config.PlayerData);
             }
         }
         public int Level
@@ -39,7 +40,7 @@ namespace Code_01.Mode
             {
                 _playerData.property.Level = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public long Exp
@@ -49,7 +50,7 @@ namespace Code_01.Mode
             {
                 _playerData.property.Exp = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int Power
@@ -73,7 +74,7 @@ namespace Code_01.Mode
                 IsEmptyPower = false;
                 _playerData.property.Power = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int Hp
@@ -90,7 +91,7 @@ namespace Code_01.Mode
                 IsDied = false;
                 _playerData.property.Hp = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int Attack
@@ -108,7 +109,7 @@ namespace Code_01.Mode
                 }
                 _playerData.property.Attack = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int Defence
@@ -126,7 +127,7 @@ namespace Code_01.Mode
                 }
                 _playerData.property.Defence = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int Speed
@@ -144,7 +145,7 @@ namespace Code_01.Mode
                 }
                 _playerData.property.Speed = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int Coin
@@ -156,7 +157,7 @@ namespace Code_01.Mode
                     value = 0;
                 //_playerData.goodsDict["Coin"] = value;
                 this.SendEvent<Msg.Register.UpdateShowData>();
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
 
@@ -171,7 +172,7 @@ namespace Code_01.Mode
                     LogUtility.Log("已经到达最低体力上限值");
                 }
                 _playerData.property.UpperPower = value;
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int UpperHp
@@ -186,7 +187,7 @@ namespace Code_01.Mode
                     return;
                 }
                 _playerData.property.UpperHp = value;
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int UpperAttack
@@ -199,7 +200,7 @@ namespace Code_01.Mode
                     value = PlayerData.LimitMinAttack;
                 }
                 _playerData.property.UpperAttack = value;
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int UpperDefence
@@ -215,7 +216,7 @@ namespace Code_01.Mode
                 }
 
                 _playerData.property.UpperDefence = value;
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
         public int UpperSpeed
@@ -229,7 +230,7 @@ namespace Code_01.Mode
                 }
 
                 _playerData.property.UpperSpeed = value;
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
 
@@ -240,14 +241,14 @@ namespace Code_01.Mode
             {
                 _playerData.goodsDict = value;
                 // todo 更新背包参数
-                YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+                JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
             }
         }
 
 
         public void UpdateLocalData()
         {
-            YJsonUtility.WriteToJson(_playerData, Msg.Paths.Config.PlayerData);
+            JsonUti.WriteToJson(_playerData, MsgPaths.Config.PlayerData);
         }
         
         private bool CheckChangeDied(int value)

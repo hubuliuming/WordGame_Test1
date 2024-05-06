@@ -10,9 +10,10 @@ using System;
 using System.Collections.Generic;
 using Code_01;
 using Code_01.Command;
-using YFramework;
-using YFramework.Kit.UI;
-using YFramework.Kit.Utility;
+using QFramework;
+using UnityEngine.UI;
+using YFramework.UI;
+
 
 public interface IItem
 {
@@ -41,9 +42,9 @@ public class ItemBase : UIBase,IController,IInit
     
     public void Init(string itemName)
     {
-         var datas = YJsonUtility.ReadFromJson<Dictionary<string,ItemData>>(Msg.Paths.Config.RecoverItem);
+         var datas = JsonUti.ReadFromJson<Dictionary<string,ItemData>>(MsgPaths.Config.RecoverItem);
          var data = datas[itemName];
-         UiUtility.Get("Btn").AddListener(() =>
+         transform.Find("Btn").GetComponent<Button>().onClick.AddListener(() =>
          {
              this.SendCommand(new UseItemCommand(data));
              gameObject.Release();

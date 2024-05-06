@@ -32,18 +32,7 @@ namespace Code_01
             public const string PlayerAttack = "PlayerAttack";
             public const string UseGoods = "UseGoods";
         }
-    
-        public class Paths
-        {
-            public struct Config
-            {
-                public static readonly string PlayerData = Application.dataPath + "/Data/Player";
-                public static readonly string RecoverItem = Application.streamingAssetsPath + "/Data/RecoverItem";
-                public static readonly string Enemy = Application.streamingAssetsPath + "/Data/Enemy";
-            }
         
-
-        }
         public struct Prefab
         {
             public static readonly string 野猪 = "Prefabs/Enemy/"+ EnemyName.野猪;

@@ -6,8 +6,9 @@
     功能：Nothing
 *****************************************************/
 
+using UnityEngine.UI;
 using YFramework.Kit;
-using YFramework.Kit.UI;
+using YFramework.UI;
 
 namespace Code_01.Controller
 {
@@ -16,8 +17,8 @@ namespace Code_01.Controller
         public string Inform;
         public void Init()
         {
-            UiUtility.Get("Text").SetText(Inform);
-            UiUtility.Get("BtnUse").AddListener(()=>MsgDispatcher.Register(Msg.Register.UseGoods, o =>
+            transform.Find("Text").GetComponent<Text>().text = Inform;
+            transform.Find("BtnUse").GetComponent<Button>().onClick.AddListener(()=>MsgDispatcher.Register(Msg.Register.UseGoods, o =>
             {
                 var itemData = o is ItemBase.ItemData ? (ItemBase.ItemData) o : default;
                 //player.ChangeAll(itemData);

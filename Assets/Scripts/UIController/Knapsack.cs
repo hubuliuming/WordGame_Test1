@@ -7,12 +7,11 @@
 *****************************************************/
 
 using Code_01.Mode;
+using QFramework;
 using UnityEngine;
-using UnityEngine.Pool;
 using UnityEngine.UI;
-using YFramework;
-using YFramework.Kit;
-using YFramework.Kit.UI;
+using YFramework.UI;
+using MsgDispatcher = YFramework.Kit.MsgDispatcher;
 
 namespace Code_01
 {

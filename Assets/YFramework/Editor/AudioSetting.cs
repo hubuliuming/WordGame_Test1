@@ -28,6 +28,7 @@ namespace YFramework.Editor
             {
                 setting.loadType = AudioClipLoadType.Streaming;
             }
+
             importer.defaultSampleSettings = setting;
         }
     }

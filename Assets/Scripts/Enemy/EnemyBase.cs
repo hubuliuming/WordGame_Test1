@@ -10,11 +10,11 @@ using System;
 using System.Collections.Generic;
 using Code_01.Command;
 using Code_01.System;
+using QFramework;
 using UnityEngine;
 using UnityEngine.Pool;
-using YFramework;
-using YFramework.Kit.UI;
-using YFramework.Kit.Utility;
+using UnityEngine.UI;
+using YFramework.UI;
 
 
 namespace Code_01.Enemy
@@ -62,12 +62,12 @@ namespace Code_01.Enemy
         private PlayerEventSystem _playerEventSystem;
         public void Init(string enemyName)
         {
-            var datas = YJsonUtility.ReadFromJson<Dictionary<string, EnemyData>>(Msg.Paths.Config.Enemy);
+            var datas = JsonUti.ReadFromJson<Dictionary<string, EnemyData>>(MsgPaths.Config.Enemy);
        
             data = datas[enemyName];
             initData = data;
             InitData();
-            UiUtility.Get("BtnAttack").AddListener(()=>
+            transform.Find("BtnAttack").GetComponent<Button>().onClick.AddListener(()=>
             {
                 Debug.Log("Attack");
                 this.SendCommand(new AttackCommand(gameObject));
